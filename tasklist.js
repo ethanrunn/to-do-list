@@ -175,15 +175,15 @@ function clearAllTasks(e) {
     // now there are two ways to do it
     // 1st
     // we cld jus set the innerhtml of the tasklist to be empty when btn2 is clicked, but we shld also add a confirmation alert too, thus
-    // if (confirm("All tasks will be cleared. Confirm??"))
-    // {
-    //     taskList.innerHTML = '';
-    // }
-    // 2nd
-    while (taskList.firstChild) {
-      // if (confirm("All tasks will be cleared. Confirm??"))
-      taskList.removeChild(taskList.firstChild);
+    if (confirm("All tasks will be cleared. Confirm??"))
+    {
+        taskList.innerHTML = '';
     }
+    // 2nd
+    // while (taskList.firstChild) {
+    //   // if (confirm("All tasks will be cleared. Confirm??"))
+    //   taskList.removeChild(taskList.firstChild);
+    // }
     // the explanation of the above is that using a while loop, the system checks that the condition is true and the condition in this case is to check if taskList has a firstchild, so if there's a firstchild, remove it and the loop keeps checking and removing all firstchilds until there's no more firstchild. MAD!!!!!
 
     // note that we didn't add our confirm alert, this is because if we have more than one list items, in this 2nd method, for everytime the system wants to remove a first child, the system will have to confirm from the user first if they really want to remove it, this sucks cos if there are 6 list items the confirm message will come up six times before the tasks are finally cleared
